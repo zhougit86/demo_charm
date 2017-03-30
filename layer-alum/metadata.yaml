@@ -1,0 +1,19 @@
+name: layer-alum
+summary: <Fill in summary here>
+maintainer: root <root@juju-KVM>
+description: |
+  this is a test for reactive python
+tags:
+  # Replace "misc" with one or more whitelisted tags from this list:
+  # https://jujucharms.com/docs/stable/authors-charm-metadata
+  - misc
+  - django
+
+#provides:
+#  website:
+#    interface: http
+#requires:
+#  postgres:
+#    interface: mysql
+
+
