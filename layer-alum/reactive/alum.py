@@ -41,7 +41,7 @@ import time
 
 djg_cfg = hookenv.config()         #load the cfg file
 
-@when_not('change the address to 2')
+@when_not('change the address to 2')          # this decorator is imported from the charms.reactive packageds, this enable the decorated function to run when certain state is met or not met
 def install():
     # Do your setup here.
     #
@@ -55,7 +55,7 @@ def install():
     #  * https://github.com/juju-solutions/layer-basic#overview
     #
     pip_install('time')
-    status_set('maintenance', 'changing the IP address of the ens9 to 2')     #show in the juju status
+    status_set('maintenance', 'changing the IP address of the ens9 to 2')     #show in the juju status, this one is displayed in the juju status command
 
     # apt_install(['build-essential', 'binutils-doc', 'autoconf', 'authbind',
     #              'bison', 'libjpeg-dev', 'libfreetype6-dev', 'zlib1g-dev',
@@ -75,7 +75,7 @@ def install():
     # source_install()
     subprocess.check_call(["ifconfig","ens9", '2.2.2.2','netmask','255.255.255.0'])
     time.sleep(5)
-    remove_state('change the address to 3')
+    remove_state('change the address to 3')   #this function is corresponding to the when , which can trigger the 'when' to work
     set_state('change the address to 2')
     # log(djg_cfg['django-port'])
 

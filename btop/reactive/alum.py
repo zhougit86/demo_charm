@@ -41,7 +41,7 @@ import time
 
 djg_cfg = hookenv.config()         #load the cfg file
 
-@hook('install')
+@hook('install')       # this hook makes the charm to execute in certain sequence. install->config-changed->start
 def install():
     status_set('maintenance', 'changing the IP address of the ens9 to 2')
     subprocess.check_call(["ifconfig", "ens9", '2.2.2.2', 'netmask', '255.255.255.0'])
