@@ -82,32 +82,50 @@ def state_0():
 
 @when('state.0')
 def state_1():
-    """Will this run 2nd?
+    """State 1
     """
-    time.sleep(TEST_TIMEOUT)
-    remove_state('state.0')
-    set_state('state.1')
+
+    # Set status
     t = time.ctime(time.time())
     status_set('maintenance', 'state.1 %s' % t)
+
+    # Workload
+    time.sleep(TEST_TIMEOUT)
+
+    # Next ->
+    remove_state('state.0')
+    set_state('state.1')
 
 
 @when('state.1')
 def state_2():
     """State 2
     """
-    time.sleep(TEST_TIMEOUT)
-    remove_state('state.1')
-    set_state('state.2')
+
+    # Set status
     t = time.ctime(time.time())
     status_set('maintenance', 'state.2 %s' % t)
+
+    # Workload
+    time.sleep(TEST_TIMEOUT)
+
+    # Next ->
+    remove_state('state.1')
+    set_state('state.2')
 
 
 @when('state.2')
 def state_3():
     """State 3
     """
+
+    # Set status
+    t = time.ctime(time.time())
+    status_set('maintenance', 'state.3 %s' % t)
+
+    # Workload
     time.sleep(TEST_TIMEOUT)
+
+    # Next ->
     remove_state('state.2')
     set_state('state.0')
-    t = time.ctime(time.time())
-    status_set('maintenance', 'state.0 %s' % t)
