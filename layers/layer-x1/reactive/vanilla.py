@@ -23,13 +23,14 @@ from charmhelpers.fetch import apt_install
 from charmhelpers.fetch import install_remote
 from charms.reactive import hook
 from charms.reactive import is_state
+from charms.reactive import only_once
 from charms.reactive import remove_state
 from charms.reactive import set_state
 from charms.reactive import when
 from charms.reactive import when_not
 
 hooks = hookenv.Hooks()
-TEST_TIMEOUT = 10
+TEST_TIMEOUT = 1
 
 
 @hooks.hook("install")
@@ -40,7 +41,7 @@ def install():
     """
 
     # install everything needed to construct the environment
-    # pip_install('time')
+    pip_install('time')
 
     # this assertion should fail!
     assert config['app-name'] == 'x1'
@@ -52,13 +53,6 @@ def install():
     # do sth
     config = hookenv.config()
     config['playbook'] = 'give me a name'
-
-
-@hooks.hook("start")
-def start():
-    t = time.ctime(time.time())
-    set_state('state.0')
-    status_set('maintenance', 'start: state.0 %s' % t)
 
 
 @hooks.hook('config-changed')
@@ -73,11 +67,25 @@ def config_changed():
     status_set('maintenance', 'my config changed')
 
 
+@hooks.hook("start")
+def start():
+    pass
+
+
+@only_once
+def state_0():
+    log('something------------------')
+    set_state('state.0')
+    status_set('maintenance', 'start: state.0')
+    time.sleep(TEST_TIMEOUT)
+
+
 @when('state.0')
 def state_1():
     """Will this run 2nd?
     """
     time.sleep(TEST_TIMEOUT)
+    remove_state('state.0')
     set_state('state.1')
     t = time.ctime(time.time())
     status_set('maintenance', 'state.1 %s' % t)
@@ -88,6 +96,7 @@ def state_2():
     """State 2
     """
     time.sleep(TEST_TIMEOUT)
+    remove_state('state.1')
     set_state('state.2')
     t = time.ctime(time.time())
     status_set('maintenance', 'state.2 %s' % t)
@@ -98,6 +107,7 @@ def state_3():
     """State 3
     """
     time.sleep(TEST_TIMEOUT)
+    remove_state('state.2')
     set_state('state.0')
     t = time.ctime(time.time())
     status_set('maintenance', 'state.0 %s' % t)
