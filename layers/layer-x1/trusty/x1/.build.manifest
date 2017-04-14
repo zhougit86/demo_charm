@@ -1,0 +1,480 @@
+{
+  "layers": [
+    "layer:basic", 
+    "x1", 
+    "interface:mysql", 
+    "build"
+  ], 
+  "signatures": {
+    ".build.manifest": [
+      "build", 
+      "dynamic", 
+      "unchecked"
+    ], 
+    ".gitignore": [
+      "layer:basic", 
+      "static", 
+      "0da5c4dcda27cd6406e5bb81cbf68ddccaf728ac764ec15053a165c1449d87d9"
+    ], 
+    "Makefile": [
+      "layer:basic", 
+      "static", 
+      "b7ab3a34e5faf79b96a8632039a0ad0aa87f2a9b5f0ba604e007cafb22190301"
+    ], 
+    "README.md": [
+      "layer:basic", 
+      "static", 
+      "81752bbec9629772edf48191912d3bf2d9190081de862fa2d005c21064f238bd"
+    ], 
+    "bin/layer_option": [
+      "layer:basic", 
+      "static", 
+      "621b556cd208005e131e9f648859294347da9376609745a73ca2e808dd2032f9"
+    ], 
+    "config.yaml": [
+      "x1", 
+      "dynamic", 
+      "35933a4fa320e0b90db9793b6bbdecf5676c31321e14da961b0c260142fd7cbd"
+    ], 
+    "copyright": [
+      "layer:basic", 
+      "static", 
+      "f6740d66fd60b60f2533d9fcb53907078d1e20920a0219afce7182e2a1c97629"
+    ], 
+    "deps/interface/mysql/.gitignore": [
+      "x1", 
+      "static", 
+      "10c8570de3a4a1d74a4b595d3618652712e2a2c71d040b2482fe62ee35057f20"
+    ], 
+    "deps/interface/mysql/Makefile": [
+      "x1", 
+      "static", 
+      "26c1957534e7e38f3e796644ada9397b7f38ca84fd3072d4ff0fdc7e06510531"
+    ], 
+    "deps/interface/mysql/README.md": [
+      "x1", 
+      "static", 
+      "f5f9c03f989bb793d577cad4293fc43c4c8de80356a9cdd35224b3c2b1769f45"
+    ], 
+    "deps/interface/mysql/common/__init__.py": [
+      "x1", 
+      "static", 
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ], 
+    "deps/interface/mysql/copyright": [
+      "x1", 
+      "static", 
+      "188b8b4aa4477e8d2a0b4c290c451326456a0ddf58e1f314c3f5bf151ddbd8a8"
+    ], 
+    "deps/interface/mysql/docs/Makefile": [
+      "x1", 
+      "static", 
+      "df5bc943222517d6af51de1d5c3fd175f69f85170009ffbe98b952cdc2844354"
+    ], 
+    "deps/interface/mysql/docs/source/conf.py": [
+      "x1", 
+      "static", 
+      "9b9bf7bcc00197d79e61cc92c8bf803eb3bc9c491ee6a08a569eb7b2bca6af5c"
+    ], 
+    "deps/interface/mysql/docs/source/index.rst": [
+      "x1", 
+      "static", 
+      "677cbca1a3549689259f64c8ecc9fba708aaa4adea986d136929543a9eaca5aa"
+    ], 
+    "deps/interface/mysql/docs/source/provides.rst": [
+      "x1", 
+      "static", 
+      "5d5b54c09c9ef697a936365ef4500f8120a73f26b7027fcbba1f029eb660addd"
+    ], 
+    "deps/interface/mysql/docs/source/requires.rst": [
+      "x1", 
+      "static", 
+      "7d43bb99e5d1352a079ccbd57b1349184e54f34d34ac1b24b59774f6fd6e99b9"
+    ], 
+    "deps/interface/mysql/interface.yaml": [
+      "x1", 
+      "static", 
+      "d7e48885ceacc5e24cb0e6a045cc51889446ef7cc5be285f73c4fcd395cafa10"
+    ], 
+    "deps/interface/mysql/peer.py": [
+      "x1", 
+      "static", 
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ], 
+    "deps/interface/mysql/provides.py": [
+      "x1", 
+      "static", 
+      "2f14fc675ae9fd9c54049f245193ee20985eb0f907f133ec7053d1d2a59dda06"
+    ], 
+    "deps/interface/mysql/requires.py": [
+      "x1", 
+      "static", 
+      "4d57a2a65ced8b70bbf4cd5353d3cc281276b1c7ed48af7253d325de09c4dd49"
+    ], 
+    "deps/interface/mysql/test_requirements.txt": [
+      "x1", 
+      "static", 
+      "2961a1d7466f55d56966caba9c6fec43a9369761dc6c1e0e9fc4213b7f8d66a7"
+    ], 
+    "deps/layer/basic/.gitignore": [
+      "x1", 
+      "static", 
+      "0da5c4dcda27cd6406e5bb81cbf68ddccaf728ac764ec15053a165c1449d87d9"
+    ], 
+    "deps/layer/basic/Makefile": [
+      "x1", 
+      "static", 
+      "b7ab3a34e5faf79b96a8632039a0ad0aa87f2a9b5f0ba604e007cafb22190301"
+    ], 
+    "deps/layer/basic/README.md": [
+      "x1", 
+      "static", 
+      "81752bbec9629772edf48191912d3bf2d9190081de862fa2d005c21064f238bd"
+    ], 
+    "deps/layer/basic/bin/layer_option": [
+      "x1", 
+      "static", 
+      "621b556cd208005e131e9f648859294347da9376609745a73ca2e808dd2032f9"
+    ], 
+    "deps/layer/basic/copyright": [
+      "x1", 
+      "static", 
+      "f6740d66fd60b60f2533d9fcb53907078d1e20920a0219afce7182e2a1c97629"
+    ], 
+    "deps/layer/basic/hooks/config-changed": [
+      "x1", 
+      "static", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "deps/layer/basic/hooks/hook.template": [
+      "x1", 
+      "static", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "deps/layer/basic/hooks/install": [
+      "x1", 
+      "static", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "deps/layer/basic/hooks/leader-elected": [
+      "x1", 
+      "static", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "deps/layer/basic/hooks/leader-settings-changed": [
+      "x1", 
+      "static", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "deps/layer/basic/hooks/start": [
+      "x1", 
+      "static", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "deps/layer/basic/hooks/stop": [
+      "x1", 
+      "static", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "deps/layer/basic/hooks/update-status": [
+      "x1", 
+      "static", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "deps/layer/basic/hooks/upgrade-charm": [
+      "x1", 
+      "static", 
+      "8fb6559bf4d4b7cdf1b857564c1d7265df98e863a4746fcbae092f141e59d97e"
+    ], 
+    "deps/layer/basic/layer.yaml": [
+      "x1", 
+      "static", 
+      "fbd3e3a22f3b8b1e7656e12f5db0ebf69c145b8e8b59c125e6faf043cba50b9b"
+    ], 
+    "deps/layer/basic/lib/charms/layer/__init__.py": [
+      "x1", 
+      "static", 
+      "71a8b901f7e64a6b1b61959fc25819bafc9c9905e37a918615b9f949295095a4"
+    ], 
+    "deps/layer/basic/lib/charms/layer/basic.py": [
+      "x1", 
+      "static", 
+      "d09706ef3a224eb60d34366a2867c382791aa30157ab5b77eda37f29731df2e2"
+    ], 
+    "deps/layer/basic/lib/charms/layer/execd.py": [
+      "x1", 
+      "static", 
+      "af1f2409869f990cdb33cffc4120fb6713876e8e680ac5f064ea510bbdca1073"
+    ], 
+    "deps/layer/basic/metadata.yaml": [
+      "x1", 
+      "static", 
+      "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+    ], 
+    "deps/layer/basic/reactive/__init__.py": [
+      "x1", 
+      "static", 
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ], 
+    "deps/layer/basic/requirements.txt": [
+      "x1", 
+      "static", 
+      "0f1c70d27e26005a96d66ad54482877ae20f7737693c833e29dd72bd6ac24892"
+    ], 
+    "deps/layer/basic/tox.ini": [
+      "x1", 
+      "static", 
+      "00b57a776ac313e92a52daa05d1fdb6056c21b3105b643d32610fd937664321b"
+    ], 
+    "deps/layer/basic/wheelhouse.txt": [
+      "x1", 
+      "static", 
+      "2f19b10e72d7299f4fc53c33caa0ad425ebcef59231238b49bc45b10ab49ae16"
+    ], 
+    "hooks/config-changed": [
+      "layer:basic", 
+      "static", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/database-relation-broken": [
+      "interface:mysql", 
+      "dynamic", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/database-relation-changed": [
+      "interface:mysql", 
+      "dynamic", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/database-relation-departed": [
+      "interface:mysql", 
+      "dynamic", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/database-relation-joined": [
+      "interface:mysql", 
+      "dynamic", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/hook.template": [
+      "layer:basic", 
+      "static", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/install": [
+      "layer:basic", 
+      "static", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/leader-elected": [
+      "layer:basic", 
+      "static", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/leader-settings-changed": [
+      "layer:basic", 
+      "static", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/relations/mysql/.gitignore": [
+      "interface:mysql", 
+      "static", 
+      "10c8570de3a4a1d74a4b595d3618652712e2a2c71d040b2482fe62ee35057f20"
+    ], 
+    "hooks/relations/mysql/Makefile": [
+      "interface:mysql", 
+      "static", 
+      "26c1957534e7e38f3e796644ada9397b7f38ca84fd3072d4ff0fdc7e06510531"
+    ], 
+    "hooks/relations/mysql/README.md": [
+      "interface:mysql", 
+      "static", 
+      "f5f9c03f989bb793d577cad4293fc43c4c8de80356a9cdd35224b3c2b1769f45"
+    ], 
+    "hooks/relations/mysql/__init__.py": [
+      "interface:mysql", 
+      "static", 
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ], 
+    "hooks/relations/mysql/common/__init__.py": [
+      "interface:mysql", 
+      "static", 
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ], 
+    "hooks/relations/mysql/copyright": [
+      "interface:mysql", 
+      "static", 
+      "188b8b4aa4477e8d2a0b4c290c451326456a0ddf58e1f314c3f5bf151ddbd8a8"
+    ], 
+    "hooks/relations/mysql/docs/Makefile": [
+      "interface:mysql", 
+      "static", 
+      "df5bc943222517d6af51de1d5c3fd175f69f85170009ffbe98b952cdc2844354"
+    ], 
+    "hooks/relations/mysql/docs/source/conf.py": [
+      "interface:mysql", 
+      "static", 
+      "9b9bf7bcc00197d79e61cc92c8bf803eb3bc9c491ee6a08a569eb7b2bca6af5c"
+    ], 
+    "hooks/relations/mysql/docs/source/index.rst": [
+      "interface:mysql", 
+      "static", 
+      "677cbca1a3549689259f64c8ecc9fba708aaa4adea986d136929543a9eaca5aa"
+    ], 
+    "hooks/relations/mysql/docs/source/provides.rst": [
+      "interface:mysql", 
+      "static", 
+      "5d5b54c09c9ef697a936365ef4500f8120a73f26b7027fcbba1f029eb660addd"
+    ], 
+    "hooks/relations/mysql/docs/source/requires.rst": [
+      "interface:mysql", 
+      "static", 
+      "7d43bb99e5d1352a079ccbd57b1349184e54f34d34ac1b24b59774f6fd6e99b9"
+    ], 
+    "hooks/relations/mysql/interface.yaml": [
+      "interface:mysql", 
+      "static", 
+      "d7e48885ceacc5e24cb0e6a045cc51889446ef7cc5be285f73c4fcd395cafa10"
+    ], 
+    "hooks/relations/mysql/peer.py": [
+      "interface:mysql", 
+      "static", 
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ], 
+    "hooks/relations/mysql/provides.py": [
+      "interface:mysql", 
+      "static", 
+      "2f14fc675ae9fd9c54049f245193ee20985eb0f907f133ec7053d1d2a59dda06"
+    ], 
+    "hooks/relations/mysql/requires.py": [
+      "interface:mysql", 
+      "static", 
+      "4d57a2a65ced8b70bbf4cd5353d3cc281276b1c7ed48af7253d325de09c4dd49"
+    ], 
+    "hooks/relations/mysql/test_requirements.txt": [
+      "interface:mysql", 
+      "static", 
+      "2961a1d7466f55d56966caba9c6fec43a9369761dc6c1e0e9fc4213b7f8d66a7"
+    ], 
+    "hooks/start": [
+      "layer:basic", 
+      "static", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/stop": [
+      "layer:basic", 
+      "static", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/update-status": [
+      "layer:basic", 
+      "static", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/upgrade-charm": [
+      "layer:basic", 
+      "static", 
+      "8fb6559bf4d4b7cdf1b857564c1d7265df98e863a4746fcbae092f141e59d97e"
+    ], 
+    "layer.yaml": [
+      "x1", 
+      "dynamic", 
+      "f336bb2ad8a24bf2444faca2578d57277d37683edf80f3a39eea85bc57acca66"
+    ], 
+    "lib/charms/layer/__init__.py": [
+      "layer:basic", 
+      "static", 
+      "71a8b901f7e64a6b1b61959fc25819bafc9c9905e37a918615b9f949295095a4"
+    ], 
+    "lib/charms/layer/basic.py": [
+      "layer:basic", 
+      "static", 
+      "d09706ef3a224eb60d34366a2867c382791aa30157ab5b77eda37f29731df2e2"
+    ], 
+    "lib/charms/layer/execd.py": [
+      "layer:basic", 
+      "static", 
+      "af1f2409869f990cdb33cffc4120fb6713876e8e680ac5f064ea510bbdca1073"
+    ], 
+    "metadata.yaml": [
+      "x1", 
+      "dynamic", 
+      "3db5fd9245c9c5eb79510c824cb2fecfaa0845f1cb2f930db81cf3dcf675200f"
+    ], 
+    "reactive/__init__.py": [
+      "layer:basic", 
+      "static", 
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ], 
+    "reactive/vanilla.py": [
+      "x1", 
+      "static", 
+      "e0ed4c0fe5284106d42a701de01a95e272dd9e68364694a59a823a82f93b03cf"
+    ], 
+    "requirements.txt": [
+      "layer:basic", 
+      "static", 
+      "0f1c70d27e26005a96d66ad54482877ae20f7737693c833e29dd72bd6ac24892"
+    ], 
+    "templates/vanilla_config.php": [
+      "x1", 
+      "static", 
+      "0b3d0c5c131b07be4070f699bc450d74ed8abda5df4b1728c28fffc3fc443de5"
+    ], 
+    "tox.ini": [
+      "layer:basic", 
+      "static", 
+      "00b57a776ac313e92a52daa05d1fdb6056c21b3105b643d32610fd937664321b"
+    ], 
+    "wheelhouse/Jinja2-2.9.6.tar.gz": [
+      "layer:basic", 
+      "dynamic", 
+      "ddaa01a212cd6d641401cb01b605f4a4d9f37bfc93043d7f760ec70fb99ff9ff"
+    ], 
+    "wheelhouse/MarkupSafe-1.0.tar.gz": [
+      "layer:basic", 
+      "dynamic", 
+      "a6be69091dac236ea9c6bc7d012beab42010fa914c459791d627dad4910eb665"
+    ], 
+    "wheelhouse/PyYAML-3.12.tar.gz": [
+      "layer:basic", 
+      "dynamic", 
+      "592766c6303207a20efc445587778322d7f73b161bd994f227adaa341ba212ab"
+    ], 
+    "wheelhouse/Tempita-0.5.2.tar.gz": [
+      "layer:basic", 
+      "dynamic", 
+      "cacecf0baa674d356641f1d406b8bff1d756d739c46b869a54de515d08e6fc9c"
+    ], 
+    "wheelhouse/charmhelpers-0.15.0.tar.gz": [
+      "layer:basic", 
+      "dynamic", 
+      "dde6d6905a1f71cd3a6ed7cbf92bb4c26159d6a1b5ce8b4e5d2b893de7cc0647"
+    ], 
+    "wheelhouse/charms.reactive-0.4.5.tar.gz": [
+      "layer:basic", 
+      "dynamic", 
+      "b2a475aff349a1c6532de0f9b4df5ee456b97a1e1755695afd8747dbc51bb710"
+    ], 
+    "wheelhouse/netaddr-0.7.19.tar.gz": [
+      "layer:basic", 
+      "dynamic", 
+      "38aeec7cdd035081d3a4c306394b19d677623bf76fa0913f6695127c7753aefd"
+    ], 
+    "wheelhouse/pip-8.1.2.tar.gz": [
+      "layer:basic", 
+      "dynamic", 
+      "4d24b03ffa67638a3fa931c09fd9e0273ffa904e95ebebe7d4b1a54c93d7b732"
+    ], 
+    "wheelhouse/pyaml-16.12.2.tar.gz": [
+      "layer:basic", 
+      "dynamic", 
+      "b865e4f53a85f4d8a092e7701f759a3237fb3ee8a928627401914aafadc00907"
+    ], 
+    "wheelhouse/six-1.10.0.tar.gz": [
+      "layer:basic", 
+      "dynamic", 
+      "105f8d68616f8248e24bf0e9372ef04d3cc10104f1980f54d57b2ce73a5ad56a"
+    ]
+  }
+}

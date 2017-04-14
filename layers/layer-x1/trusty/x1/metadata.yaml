@@ -1,0 +1,10 @@
+"name": "x1"
+"summary": "Test xClarity RESTful API endpoints."
+"maintainer": "Feng Xia <fxia1@lenovo.com>"
+"description": |
+  This is a test charm to get familiar with xClarity API calls.
+"tags":
+- "social"
+"requires":
+  "database":
+    "interface": "mysql"
