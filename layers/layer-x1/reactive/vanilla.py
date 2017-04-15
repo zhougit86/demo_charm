@@ -2,7 +2,9 @@ import os
 import pprint
 import pwd
 import re
+import shlex
 import subprocess
+import sys
 import time
 
 import yaml
@@ -31,6 +33,7 @@ from charms.reactive import when_not
 
 hooks = hookenv.Hooks()
 TEST_TIMEOUT = 1
+myproc = None
 
 
 @hooks.hook("install")
@@ -47,7 +50,8 @@ def install():
     assert config['app-name'] == 'x1'
 
     # test: subprocess
-    args = [x.string() for x in "sudo apt update".split(" ")]
+    log("install-----------------")
+    args = [x.strip() for x in "sudo apt update".split()]
     p = subprocess.Popen(args, shell=True)
 
     # do sth
@@ -97,35 +101,35 @@ def state_1():
     set_state('state.1')
 
 
-# @when('state.1')
-# def state_2():
-#     """State 2
-#     """
+@when('state.1')
+def state_2():
+    """State 2
+    """
 
-#     # Set status
-#     t = time.ctime(time.time())
-#     status_set('maintenance', 'state.2 %s' % t)
+    # Set status
+    t = time.ctime(time.time())
+    status_set('maintenance', 'state.2 %s' % t)
 
-#     # Workload
-#     time.sleep(TEST_TIMEOUT)
+    # Workload
+    time.sleep(TEST_TIMEOUT)
 
-#     # Next ->
-#     remove_state('state.1')
-#     set_state('state.2')
+    # Next ->
+    remove_state('state.1')
+    set_state('state.2')
 
 
-# @when('state.2')
-# def state_3():
-#     """State 3
-#     """
+@when('state.2')
+def state_3():
+    """State 3
+    """
 
-#     # Set status
-#     t = time.ctime(time.time())
-#     status_set('maintenance', 'state.3 %s' % t)
+    # Set status
+    t = time.ctime(time.time())
+    status_set('maintenance', 'state.3 %s' % t)
 
-#     # Workload
-#     time.sleep(TEST_TIMEOUT)
+    # Workload
 
-#     # Next ->
-#     remove_state('state.2')
-#     set_state('state.0')
+    # Next ->
+    remove_state('state.2')
+    set_state('state.0')
+    set_state('do: git clone test')
