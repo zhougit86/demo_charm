@@ -79,6 +79,23 @@ def state_0():
     time.sleep(TEST_TIMEOUT)
 
 
+@when('state.0')
+def state_1():
+    """State 1
+    """
+
+    # Set status
+    t = time.ctime(time.time())
+    status_set('maintenance', 'state.1 %s' % t)
+
+    # Workload
+    time.sleep(TEST_TIMEOUT)
+
+    # Next ->
+    remove_state('state.0')
+    set_state('state.1')
+
+
 @when('state.1')
 def state_2():
     """State 2
