@@ -116,3 +116,20 @@ def state_2():
     # Next ->
     remove_state('state.1')
     set_state('state.2')
+
+
+@when('state.2')
+def state_3():
+    """State 3
+    """
+
+    # Set status
+    t = time.ctime(time.time())
+    status_set('maintenance', 'state.3 %s' % t)
+
+    # Workload
+
+    # Next ->
+    remove_state('state.2')
+    set_state('state.0')
+    set_state('do: git clone test')

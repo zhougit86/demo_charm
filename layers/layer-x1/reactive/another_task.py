@@ -32,17 +32,19 @@ from charms.reactive import when
 from charms.reactive import when_not
 
 hooks = hookenv.Hooks()
-myproc = None
+myproc = None  # this is evil
 
 
-@when('state.2')
-def state_3():
-    """State 3
+@when('do: git clone test')
+def try_git_clone():
+    """Test git clone
     """
+
+    func_name = sys._getframe().f_code.co_name
 
     # Set status
     t = time.ctime(time.time())
-    status_set('maintenance', 'state.3 %s' % t)
+    status_set('maintenance', '%s %s' % (func_name, t))
 
     # Workload
     log('state 3: Popen apt upgrade -------------')
@@ -79,8 +81,9 @@ def test_blocking_wait():
         output, err = myproc.communicate()
         log('Proc output: %s' % output)
         log('Proc err: %s' % err)
+        myproce = None  # reset
     else:
-        log('myproc is None')
+        log('myproc is None, skip')
 
     # Next ->
     remove_state('test: blocking wait')
