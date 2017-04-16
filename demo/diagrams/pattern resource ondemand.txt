@@ -1,0 +1,23 @@
+@startuml
+
+actor Operator as operator
+participant "Orchestrator" as orch
+participant "Cloud provider" as cloud
+participant "Resources" as resource
+
+operator -> orch: Deploy workload xyz
+activate orch
+
+orch -> orch: Parse workload and formulate deployment workflow and actions
+orch -> cloud: Give me resource with these constraints
+activate cloud
+cloud -> resource: Create resource and set it up as requested
+activate resource
+
+cloud -> orch: Resource access method, eg. IP, ssh credential
+orch -> resource: Access, then execute workload instructions
+resource -> orch: Deployment status
+orch -> orch: Check workload workflow for completion
+orch -> operator: Done or error
+
+@enduml
