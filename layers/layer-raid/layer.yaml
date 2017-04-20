@@ -1,7 +1,7 @@
 repo: git@github.com:fengxia41103/myblog.git
 includes:
   - 'layer:basic'
-  - 'interface:mysql'
+  - 'interface:raid-server'
 options:
   basic:
     packages:

@@ -2,6 +2,7 @@ repo: git@github.com:fengxia41103/myblog.git
 includes:
   - 'layer:basic'
   - 'interface:mysql'
+  - 'interface:server-rack'
 provides:
   rack:
     interface: rack-server

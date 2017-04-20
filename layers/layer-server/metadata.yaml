@@ -5,6 +5,11 @@ description: |
   This is a generic server charm.
 tags:
   - social
+provides:
+  storage:
+    interface: server-storage
+  raid:
+    interface: server-raid
 requires:
   rack:
     interface: rack-server
