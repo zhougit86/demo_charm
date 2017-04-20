@@ -1,14 +1,20 @@
 services:
-  mysolution:
-    charm: ./trusty/Solution
-    options:
-      plugins: ""
+  rack:
+    charm: ./trusty/rack
     num_units: 1
     annotations:
       gui-x: "300"
       gui-y: "400"
     to:
       - "1"
+  server:
+    charm: ./trusty/server
+    num_units: 2
+    annotations:
+      gui-x: "300"
+      gui-y: "800"
+    to:
+      - "2"
   mysql:
     charm: "cs:mysql-57"
     options:
@@ -17,8 +23,13 @@ services:
       gui-x: "600"
       gui-y: "400"
     to:
-      - "2"
+      - "1"
 series: xenial
+relations:
+  - - "server:rack"
+    - "rack:rack"
+  - - "rack:database"
+    - "mysql:db"
 machines:
   "1":
     constraints: "mem=7G"

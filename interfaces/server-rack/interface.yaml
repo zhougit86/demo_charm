@@ -1,0 +1,4 @@
+name: rack-server
+summary: Rack to server interface
+version: 1
+repo: https://git.launchpad.net/~fengxia/

@@ -1,4 +1,4 @@
-name: Server
+name: server
 summary: This is a server charm
 maintainer: Feng Xia <fxia1@lenovo.com>
 description: |
@@ -6,5 +6,5 @@ description: |
 tags:
   - social
 requires:
-  database:
-    interface: mysql
+  rack:
+    interface: rack-server

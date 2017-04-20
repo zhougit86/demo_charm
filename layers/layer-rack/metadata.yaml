@@ -1,10 +1,13 @@
-name: Rack
+name: rack
 summary: This is a rack charm
 maintainer: Feng Xia <fxia1@lenovo.com>
 description: |
   This is a generic rack charm.
 tags:
   - social
+provides:
+  rack:
+    interface: rack-server
 requires:
   database:
     interface: mysql
