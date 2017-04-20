@@ -1,0 +1,9 @@
+repo: git@github.com:fengxia41103/myblog.git
+includes:
+  - 'layer:basic'
+  - 'layer:raid'
+options:
+  basic:
+    packages:
+      - python
+      - git

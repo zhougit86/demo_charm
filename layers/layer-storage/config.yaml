@@ -1,0 +1,13 @@
+options:
+  app-name:
+    type: string
+    default: "Storage"
+    description: "This is a storage"
+  size:
+    type: string
+    default: "1U"
+    description: "1U/2U/4U/10U"
+  capacity:
+    type: string
+    default: "100G"
+    description: "Disk capacity in M|G|T"

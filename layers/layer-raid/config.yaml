@@ -1,0 +1,17 @@
+options:
+  app-name:
+    type: string
+    default: "Raid"
+    description: "This is a RAID adapter"
+  speed:
+    type: string
+    default: "PCIx1"
+    description: "PCIx1|4|6"
+  adapter-config-json:
+    type: string
+    default: ""
+    description: "Adapter config JSON"
+  array-adapters:
+    type: string
+    default: ""
+    description: "RAID array config JSON"

@@ -1,0 +1,10 @@
+name: Solution
+summary: This is a solution charm.
+maintainer: Feng Xia <fxia1@lenovo.com>
+description: |
+  This is a generic solution charm.
+tags:
+  - social
+requires:
+  database:
+    interface: mysql

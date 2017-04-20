@@ -1,0 +1,10 @@
+name: Server
+summary: This is a server charm
+maintainer: Feng Xia <fxia1@lenovo.com>
+description: |
+  This is a generic server charm.
+tags:
+  - social
+requires:
+  database:
+    interface: mysql

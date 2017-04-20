@@ -1,0 +1,10 @@
+name: Storage
+summary: This is a storage charm.
+maintainer: Feng Xia <fxia1@lenovo.com>
+description: |
+  This is a generic storage charm.
+tags:
+  - social
+requires:
+  database:
+    interface: mysql

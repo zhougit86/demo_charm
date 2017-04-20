@@ -1,0 +1,28 @@
+services:
+  mysolution:
+    charm: ./trusty/Solution
+    options:
+      plugins: ""
+    num_units: 1
+    annotations:
+      gui-x: "300"
+      gui-y: "400"
+    to:
+      - "1"
+  mysql:
+    charm: "cs:mysql-57"
+    options:
+    num_units: 1
+    annotations:
+      gui-x: "600"
+      gui-y: "400"
+    to:
+      - "2"
+series: xenial
+machines:
+  "1":
+    constraints: "mem=7G"
+    series: "xenial"
+  "2":
+    constraints: "mem=7G"
+    series: "xenial"

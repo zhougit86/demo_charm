@@ -1,0 +1,17 @@
+options:
+  app-name:
+    type: string
+    default: "Server"
+    description: "This is a server"
+  size:
+    type: string
+    default: "1U"
+    description: "1U/2U"
+  front-disk-config-json:
+    type: string
+    default: ""
+    description: "Front disk configuration JSON"
+  back-disk-config-json:
+    type: string
+    default: ""
+    description: "Back disk configuration JSON"

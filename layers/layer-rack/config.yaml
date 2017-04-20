@@ -1,0 +1,17 @@
+options:
+  app-name:
+    type: string
+    default: "Rack"
+    description: "This is a rack"
+  is-primary:
+    type: bool
+    default: true
+    description: "Primary rack flag"
+  size:
+    type: string
+    default: "16U"
+    description: "Rack physical size"
+  width:
+    type: int
+    default: 1
+    description: "Width in inches"
