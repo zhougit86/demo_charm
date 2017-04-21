@@ -1,3 +1,13 @@
+machines:
+  "1":
+    constraints: "mem=2G"
+    series: "xenial"
+  "2":
+    constraints: "mem=2G"
+    series: "xenial"
+  "3":
+    constraints: "mem=2G"
+    series: "xenial"
 services:
   rack:
     charm: ./trusty/rack
@@ -12,15 +22,23 @@ services:
     num_units: 2
     annotations:
       gui-x: "300"
-      gui-y: "800"
+      gui-y: "700"
     to:
       - "2"
   raid:
     charm: ./trusty/raid
     num_units: 2
     annotations:
+      gui-x: "300"
+      gui-y: "1000"
+    to:
+      - "2"
+  storage:
+    charm: ./trusty/storage
+    num_units: 2
+    annotations:
       gui-x: "600"
-      gui-y: "800"
+      gui-y: "700"
     to:
       - "3"
   mysql:
@@ -34,19 +52,15 @@ services:
       - "1"
 series: xenial
 relations:
-  - - "server:rack"
-    - "rack:rack"
+  # rack to mysql relation
   - - "rack:database"
     - "mysql:db"
-  - - "raid:raid"
+  # rack to server relation
+  - - "server:rack"
+    - "rack:rack"
+  # server to raid relation
+  - - "raid:server"
     - "server:raid"
-machines:
-  "1":
-    constraints: "mem=2G"
-    series: "xenial"
-  "2":
-    constraints: "mem=2G"
-    series: "xenial"
-  "3":
-    constraints: "mem=2G"
-    series: "xenial"
+  # server to storage relation
+  - - "storage:server"
+    - "server:storage"
