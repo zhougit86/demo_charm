@@ -4,7 +4,7 @@ options:
     default: "Rack"
     description: "This is a rack"
   is-primary:
-    type: bool
+    type: boolean
     default: true
     description: "Primary rack flag"
   size:

@@ -78,58 +78,11 @@ def start():
 
 @only_once
 def state_0():
-    log('x1------------------')
-    set_state('state.0')
+    log('rack is up------------------')
     status_set('maintenance', 'start: state.0')
     time.sleep(TEST_TIMEOUT)
 
 
-@when('state.0')
-def state_1():
-    """State 1
-    """
-
-    # Set status
-    t = time.ctime(time.time())
-    status_set('maintenance', 'state.1 %s' % t)
-
-    # Workload
-    time.sleep(TEST_TIMEOUT)
-
-    # Next ->
-    remove_state('state.0')
-    set_state('state.1')
-
-
-@when('state.1')
-def state_2():
-    """State 2
-    """
-
-    # Set status
-    t = time.ctime(time.time())
-    status_set('maintenance', 'state.2 %s' % t)
-
-    # Workload
-    time.sleep(TEST_TIMEOUT)
-
-    # Next ->
-    remove_state('state.1')
-    set_state('state.2')
-
-
-@when('state.2')
-def state_3():
-    """State 3
-    """
-
-    # Set status
-    t = time.ctime(time.time())
-    status_set('maintenance', 'state.3 %s' % t)
-
-    # Workload
-
-    # Next ->
-    remove_state('state.2')
-    set_state('state.0')
-    set_state('do: git clone test')
+@when('rack-server.available')
+def configure_website(rack_relation):
+    rack_relation.configure("hello")

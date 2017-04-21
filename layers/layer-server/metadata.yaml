@@ -1,10 +1,15 @@
-name: Server
+name: server
 summary: This is a server charm
 maintainer: Feng Xia <fxia1@lenovo.com>
 description: |
   This is a generic server charm.
 tags:
   - social
+provides:
+  storage:
+    interface: server-storage
+  raid:
+    interface: server-raid
 requires:
-  database:
-    interface: mysql
+  rack:
+    interface: rack-server
