@@ -1,0 +1,13 @@
+name: server3550
+summary: This is a 3550 server charm
+maintainer: Feng Xia <fxia1@lenovo.com>
+description: |
+  This is a 3550 server charm.
+provides:
+  storage:
+    interface: server-storage
+  raid:
+    interface: server-raid
+requires:
+  rack:
+    interface: rack-server

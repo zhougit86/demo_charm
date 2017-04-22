@@ -1,0 +1,10 @@
+name: pdu
+summary: This is a PDU charm
+maintainer: Feng Xia <fxia1@lenovo.com>
+description: |
+  This is a generic PDU charm.
+tags:
+  - social
+requires:
+  rack:
+    interface: rack-pdu

@@ -6,8 +6,10 @@ description: |
 tags:
   - social
 provides:
-  rack:
+  server:
     interface: rack-server
+  pdu:
+    interface: rack-pdu
 requires:
   database:
     interface: mysql
