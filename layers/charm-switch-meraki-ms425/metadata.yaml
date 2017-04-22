@@ -1,0 +1,7 @@
+name: switch-meraki-ms425
+summary: This is a switch charm.
+maintainer: Feng Xia <fxia1@lenovo.com>
+description: |
+  Meriki MS425 switch charm.
+tags:
+  - switch

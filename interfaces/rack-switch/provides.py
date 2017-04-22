@@ -4,29 +4,29 @@ from charms.reactive import hook
 from charms.reactive import scopes
 
 
-class RackPduProvides(RelationBase):
+class RackSwitchProvides(RelationBase):
     # Every unit connecting will get the same information
     scope = scopes.GLOBAL
 
     # Use some template magic to declare our relation(s)
-    @hook('{provides:rack-pdu}-relation-{joined,changed}')
+    @hook('{provides:rack-switch}-relation-{joined,changed}')
     def changed(self):
         # Signify that the relationship is now available to our principal
         # layer(s)
-        self.set_state('{rack-pdu}.available')
+        self.set_state('{rack-switch}.available')
 
-    @hook('{provides:rack-pdu}-relation-{departed}')
+    @hook('{provides:rack-switch}-relation-{departed}')
     def departed(self):
         # Remove the state that our relationship is now available to our
         # principal layer(s)
-        self.remove_state('{rack-pdu}.available')
+        self.remove_state('{rack-switch}.available')
 
     # call this method when passed into methods decorated with
     # @when('{relation}.available')
     # to configure the relation data
     def configure(self, sth):
         relation_info = {
-            'pdu': hookenv.unit_get('app-name'),
+            'rack': hookenv.unit_get('app-name'),
             'anotherConfig': sth
         }
         self.set_remote(**relation_info)

@@ -1,0 +1,8 @@
+repo: git@github.com:fengxia41103/myblog.git
+includes:
+  - 'layer:basic'
+  - 'layer:charm-server' # inheritance from generic server
+  - 'layer:charm-raid-dell-h330' # include raid
+  - 'interface:server-rack'
+  - 'interface:server-storage'
+  - 'interface:server-raid'

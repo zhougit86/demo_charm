@@ -1,0 +1,12 @@
+name: raid-dell-h330
+summary: This is a DELL raid charm
+maintainer: Feng Xia <fxia1@lenovo.com>
+description: |
+  DELL RAID adapter H330.
+tags:
+  - RAID
+provides:
+  server-m3550:
+    interface: server-raid
+  server-m3650:
+    interface: server-raid

@@ -1,0 +1,5 @@
+options:
+  p345-config:
+    type: string
+    default: ""
+    description: "P345 specific config"

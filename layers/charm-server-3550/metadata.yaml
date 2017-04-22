@@ -1,10 +1,8 @@
-name: server
-summary: This is a server charm
+name: server-m3550
+summary: This is a 3550 server charm
 maintainer: Feng Xia <fxia1@lenovo.com>
 description: |
-  This is a generic server charm.
-tags:
-  - server
+  This is a 3550 server charm.
 provides:
   rack:
     interface: rack-server

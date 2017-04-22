@@ -1,0 +1,5 @@
+options:
+  h330-config:
+    type: string
+    default: "Some H330 specific config"
+    description: "RAID0/1/...."

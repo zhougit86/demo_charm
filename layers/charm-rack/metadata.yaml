@@ -4,12 +4,9 @@ maintainer: Feng Xia <fxia1@lenovo.com>
 description: |
   This is a generic rack charm.
 tags:
-  - social
-provides:
-  server:
-    interface: rack-server
+  - rack
+requires:
   pdu:
     interface: rack-pdu
-requires:
-  database:
-    interface: mysql
+  server:
+    interface: rack-server

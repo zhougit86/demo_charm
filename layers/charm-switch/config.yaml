@@ -1,0 +1,29 @@
+options:
+  app-name:
+    type: string
+    default: "Switch"
+    description: "This is a switch"
+  size:
+    type: string
+    default: "1U"
+    descriptioin: "1U/2U"
+  speed:
+    type: string
+    default: "1G"
+    description: "1G/10G"
+  cooling-orientation:
+    type: string
+    default: "Horizontal"
+    description: "Horizontal/Vertical"
+  os:
+    type: string
+    default: "ENOS"
+    description: "ENOS/CNOS"
+  port-config-json:
+    type: string
+    default: ""
+    description: "Por config JSON"
+  configuration-url:
+    type: string
+    default: "http://10.0.240.43/server/configuration/"
+    description: "Server configuration file URL"

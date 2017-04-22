@@ -1,0 +1,12 @@
+name: switch
+summary: This is a switch charm.
+maintainer: Feng Xia <fxia1@lenovo.com>
+description: |
+  A generic switch charm.
+tags:
+  - switch
+provides:
+  rack:
+    interface: rack-switch
+  server:
+    interface: switch-server

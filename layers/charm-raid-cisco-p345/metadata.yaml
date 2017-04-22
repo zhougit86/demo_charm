@@ -1,0 +1,10 @@
+name: raid-cisco-p345
+summary: This is a CISCO RAID P345 charm
+maintainer: Feng Xia <fxia1@lenovo.com>
+description: |
+  CISCO P345 RAID adapter.
+tags:
+  - raid
+provides:
+  server-m3650:
+    interface: server-raid

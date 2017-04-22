@@ -1,5 +1,9 @@
 from argparse import ArgumentParser
+from pprint import pprint
 from subprocess import check_call
+from time import sleep
+
+import yaml
 
 
 def remove_machine(m):
@@ -34,7 +38,9 @@ def main():
           hardcoded: rack, server, storage, raid, pdu....
     """
 
-    apps = ["rack", "server", "storage", "raid", "pdu"]
+    bundle = yaml.load(open('bundle.yaml', 'r').read())
+    apps = bundle['services'].keys()
+
     parser = ArgumentParser(description="Clean up Juju environment")
     parser.add_argument("machines",
                         nargs="+",
@@ -42,10 +48,17 @@ def main():
                         help="machines to remove")
 
     args = parser.parse_args()
-    for m in args.machines:
-        remove_machine(m)
+    start_at = args.machines[0]
     for a in apps:
         remove_application(a)
+        sleep(2)
+
+    for m in [start_at + i for i in range(len(bundle['machines']))]:
+        remove_machine(m)
+        sleep(3)
+    for a in apps:
+        remove_application(a)
+        sleep(2)
 
     print "Environment is clean."
 
