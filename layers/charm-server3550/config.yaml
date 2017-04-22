@@ -1,0 +1,5 @@
+options:
+  3550-config:
+    type: string
+    default: ""
+    description: "3550 specific config"

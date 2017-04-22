@@ -1,0 +1,12 @@
+repo: git@github.com:fengxia41103/myblog.git
+includes:
+  - 'layer:basic'
+  - 'layer:charm-server' # inheritance from generic server
+  - 'interface:server-rack'
+  - 'interface:storage-server'
+  - 'interface:raid-server'
+options:
+  basic:
+    packages:
+      - python
+      - git

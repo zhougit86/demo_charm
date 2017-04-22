@@ -17,6 +17,14 @@ services:
       gui-y: "400"
     to:
       - "1"
+  pdu:
+    charm: ./trusty/pdu
+    num_units: 2
+    annotations:
+      gui-x: "600"
+      gui-y: "700"
+    to:
+      - "1"
   server:
     charm: ./trusty/server
     num_units: 2
@@ -38,26 +46,17 @@ services:
     num_units: 2
     annotations:
       gui-x: "600"
-      gui-y: "700"
+      gui-y: "1000"
     to:
       - "3"
-  mysql:
-    charm: "cs:mysql-57"
-    options:
-    num_units: 1
-    annotations:
-      gui-x: "600"
-      gui-y: "400"
-    to:
-      - "1"
 series: xenial
 relations:
-  # rack to mysql relation
-  - - "rack:database"
-    - "mysql:db"
+  # rack to PDU relation
+  - - "pdu:rack"
+    - "rack:pdu"
   # rack to server relation
   - - "server:rack"
-    - "rack:rack"
+    - "rack:server"
   # server to raid relation
   - - "raid:server"
     - "server:raid"

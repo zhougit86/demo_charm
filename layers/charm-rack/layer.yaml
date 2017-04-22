@@ -3,9 +3,7 @@ includes:
   - 'layer:basic'
   - 'interface:mysql'
   - 'interface:server-rack'
-provides:
-  rack:
-    interface: rack-server
+  - 'interface:rack-pdu'
 options:
   basic:
     packages:

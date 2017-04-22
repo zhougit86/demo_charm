@@ -1,0 +1,17 @@
+options:
+  app-name:
+    type: string
+    default: "PDU"
+    description: "This is a PDU"
+  voltage:
+    type: string
+    default: "120V single phase"
+    description: "Voltage and phase"
+  orientation:
+    type: string
+    default: "horizontal"
+    description: "Mounting orientation, horizontal|vertical"
+  form-factor:
+    type: string
+    default: "1U"
+    description: "Use 0U for vertical mount"

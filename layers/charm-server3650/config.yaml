@@ -1,0 +1,5 @@
+options:
+  3650-config:
+    type: string
+    default: ""
+    description: "3650 specific config"
