@@ -98,8 +98,8 @@ services:
     charm: ./dist/trusty/storage
     num_units: 5
     annotations:
-      gui-x: "600"
-      gui-y: "1500"
+      gui-x: "900"
+      gui-y: "1200"
     to:
       - "4"
 
