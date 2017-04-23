@@ -11,3 +11,5 @@ requires:
     interface: server-storage
   raid:
     interface: server-raid
+  switch:
+    interface: switch-server

@@ -5,3 +5,8 @@ description: |
   Meriki MS425 switch charm.
 tags:
   - switch
+provides:
+  rack:
+    interface: rack-switch
+  server:
+    interface: switch-server

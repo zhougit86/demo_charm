@@ -10,3 +10,5 @@ requires:
     interface: rack-pdu
   server:
     interface: rack-server
+  switch:
+    interface: rack-switch

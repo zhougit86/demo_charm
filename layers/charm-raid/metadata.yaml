@@ -5,6 +5,6 @@ description: |
   This is a generic RAID charm.
 tags:
   - raid
-requires:
+provides:
   server:
     interface: server-raid

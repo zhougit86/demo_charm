@@ -6,5 +6,5 @@ description: |
 tags:
   - raid
 provides:
-  server-m3650:
+  server:
     interface: server-raid

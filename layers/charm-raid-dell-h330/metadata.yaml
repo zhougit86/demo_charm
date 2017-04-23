@@ -6,7 +6,5 @@ description: |
 tags:
   - RAID
 provides:
-  server-m3550:
-    interface: server-raid
-  server-m3650:
+  server:
     interface: server-raid

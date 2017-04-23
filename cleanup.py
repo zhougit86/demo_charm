@@ -12,7 +12,7 @@ def remove_machine(m):
     args = "~/juju remove-machine %d --force" % m
     print args
     try:
-        check_call(args, shell=False)
+        check_call(args, shell=True)
     except:
         pass
 

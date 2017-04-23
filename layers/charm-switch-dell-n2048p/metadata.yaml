@@ -5,3 +5,8 @@ description: |
   DELL N2048P switch charm.
 tags:
   - switch
+provides:
+  rack:
+    interface: rack-switch
+  server:
+    interface: switch-server

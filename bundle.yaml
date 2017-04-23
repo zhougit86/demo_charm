@@ -1,16 +1,16 @@
 machines:
   "1":
     constraints: "mem=2G"
-    series: "trusty"
+    series: "xenial"
   "2":
     constraints: "mem=2G"
-    series: "trusty"
+    series: "xenial"
   "3":
     constraints: "mem=2G"
-    series: "trusty"
+    series: "xenial"
   "4":
     constraints: "mem=2G"
-    series: "trusty"
+    series: "xenial"
 services:
   # 42U default rack
   rack:
@@ -31,14 +31,15 @@ services:
       gui-y: "300"
     to:
       - "1"
+      - "2"
 
   # switch DELL N2048P
   switch-dell-n2048p:
     charm: ./dist/trusty/switch-dell-n2048p
     num_units: 1
     annotations:
-      gui-x: "900"
-      gui-y: "300"
+      gui-x: "300"
+      gui-y: "600"
     to:
       - "2"
 
@@ -47,8 +48,8 @@ services:
     charm: ./dist/trusty/switch-meraki-ms425
     num_units: 1
     annotations:
-      gui-x: "1200"
-      gui-y: "300"
+      gui-x: "600"
+      gui-y: "600"
     to:
       - "2"
 
@@ -57,8 +58,8 @@ services:
     charm: ./dist/trusty/server-m3650
     num_units: 1
     annotations:
-      gui-x: "300"
-      gui-y: "600"
+      gui-x: "600"
+      gui-y: "900"
     to:
       - "3"
 
@@ -68,8 +69,8 @@ services:
     charm: ./dist/trusty/server-m3550
     num_units: 1
     annotations:
-      gui-x: "600"
-      gui-y: "600"
+      gui-x: "900"
+      gui-y: "900"
     to:
       - "3"
 
@@ -79,17 +80,26 @@ services:
     num_units: 1
     annotations:
       gui-x: "300"
-      gui-y: "900"
+      gui-y: "1200"
     to:
       - "4"
 
+  # RAID adapter CISCO P345
+  raid-cisco-p345:
+    charm: ./dist/trusty/raid-cisco-p345
+    num_units: 1
+    annotations:
+      gui-x: "600"
+      gui-y: "1200"
+    to:
+      - "4"
   # generic storage
   storage:
     charm: ./dist/trusty/storage
     num_units: 5
     annotations:
       gui-x: "600"
-      gui-y: "900"
+      gui-y: "1500"
     to:
       - "4"
 
@@ -99,23 +109,35 @@ series: xenial
 # relations
 relations:
   # rack to PDU relation
-  - - "rack:pdu" # require
-    - "pdu:rack" # provide
+  - - "rack:pdu" # require first, app name:required interface name
+    - "pdu:rack" # provide 2nd, app name:provides interface name
+
+  # rack to switch relation
+  - - "rack:switch"
+    - "switch-dell-n2048p:rack"
+  - - "rack:switch"
+    - "switch-meraki-ms425:rack"
 
   # rack to server relation
-  - - "server-m3650:rack"
-    - "rack:server-m3650"
+  - - "rack:server"
+    - "server-m3650:rack"
+  - - "rack:server"
+    - "server-m3550:rack"
 
-  # rack to server relation
-  - - "server-m3550:rack"
-    - "rack:server-m3550"
+  # switch to server relation
+  - - "server-m3650:switch"
+    - "switch-dell-n2048p:server"
+  - - "server-m3550:switch"
+    - "switch-meraki-ms425:server"
 
   # server to raid relation
-  - - "raid-dell-h330:server-m3550"
-    - "server-m3550:raid-dell-h330"
+  - - "server-m3650:raid"
+    - "raid-dell-h330:server"
+  - - "server-m3550:raid"
+    - "raid-cisco-p345:server"
 
   # server to storage relation
   - - "server-m3650:storage"
-    - "storage:server-m3650"
+    - "storage:server"
   - - "server-m3550:storage"
-    - "storage:server-m3550"
+    - "storage:server"
