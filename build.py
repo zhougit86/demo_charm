@@ -11,7 +11,7 @@ def main():
 
     # compile all
     for dirpath, subdirs, filenames in os.walk('.'):
-        if dirpath.endswith('/layers'):
+        if dirpath.endswith('/charms'):
             for s in filter(lambda x: x.startswith('charm-'), subdirs):
                 working_dir = os.path.join(dirpath, s)
                 print "Charm build", working_dir
