@@ -1,5 +1,5 @@
 options:
   app-name:
     type: string
-    default: "x1"
-    description: "Description of xclarity application"
+    default: "chained states"
+    description: "Demo of chained states"

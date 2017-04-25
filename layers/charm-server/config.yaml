@@ -7,6 +7,10 @@ options:
     type: string
     default: "1U"
     description: "1U/2U"
+  server-ip:
+    type: string
+    default: "192.168.0.100"
+    description: "Assigned server IP address"
   front-disk-config-json:
     type: string
     default: ""

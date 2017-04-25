@@ -38,17 +38,27 @@ def main():
           hardcoded: rack, server, storage, raid, pdu....
     """
 
-    bundle = yaml.load(open('bundle.yaml', 'r').read())
-    apps = bundle['services'].keys()
-
     parser = ArgumentParser(description="Clean up Juju environment")
-    parser.add_argument("machines",
+    parser.add_argument("--machines",
+                        "-m",
                         nargs="+",
                         type=int,
                         help="machines to remove")
+    parser.add_argument("--bundle",
+                        "-b",
+                        default="default.yaml",
+                        help="bundle YAML file")
 
     args = parser.parse_args()
     start_at = args.machines[0]
+
+    if not args.bundle:
+        print 'Missing bundle file'
+        return
+
+    bundle = yaml.load(open(args.bundle, 'r').read())
+    apps = bundle['services'].keys()
+
     for a in apps:
         remove_application(a)
         sleep(2)

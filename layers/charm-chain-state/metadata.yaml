@@ -1,10 +1,7 @@
-name: x1
-summary: Test xClarity RESTful API endpoints.
+name: chained-states
+summary: Demo of chained states
 maintainer: Feng Xia <fxia1@lenovo.com>
 description: |
-  This is a test charm to get familiar with xClarity API calls.
+  Demo charm to illustrate chained states.
 tags:
-  - social
-requires:
-  database:
-    interface: mysql
+  - demo
