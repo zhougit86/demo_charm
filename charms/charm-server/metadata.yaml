@@ -9,6 +9,8 @@ provides:
   rack:
     interface: rack-server
 requires:
+  sth:
+    interface: server-server3650
   storage:
     interface: server-storage
   raid:

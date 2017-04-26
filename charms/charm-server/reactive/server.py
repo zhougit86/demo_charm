@@ -36,37 +36,37 @@ TEST_TIMEOUT = 1
 myproc = None
 
 
-@hooks.hook("install")
+@hook("install")
 def install():
     """Set the installed state.
 
     This is the entry point.
     """
 
-    # install everything needed to construct the environment
-    pip_install('time')
-
-    # this assertion should fail!
-    assert config['app-name'] == 'x1'
-
     # test: subprocess
     log("install-----------------")
-    args = [x.strip() for x in "sudo apt update".split()]
     p = subprocess.Popen(args, shell=True)
+    with open('/tmp/myserver.log', 'w') as f:
+        f.write('install hook\n')
 
     # do sth
     config = hookenv.config()
     config['playbook'] = 'give me a name'
 
 
-@hooks.hook('config-changed')
+@hook('config-changed')
 def config_changed():
     config = hookenv.config()
 
-    status_set('maintenance', 'Server configured: ' + config['server-ip'])
+    log("I'm here---------------------")
+    log('New IP: ' + config['server-ip'])
+    if config.changed['server-ip']:
+        log("Server IP changed: " + config['server-ip'])
+    with open('/tmp/myserver.log', 'a') as f:
+        f.write('new config: %s\n' % config)
 
 
-@hooks.hook("start")
+@hook("start")
 def start():
     pass
 
@@ -83,4 +83,5 @@ def state_1():
     """
 
     # Set status
+    remove_state("state.1")
     status_set('maintenance', 'server not configured')
