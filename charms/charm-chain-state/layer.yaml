@@ -1,3 +1,9 @@
 repo: git@github.com:fengxia41103/myblog.git
 includes:
   - 'layer:basic'
+options:
+  basic:
+    packages: ['epel-release','python34','git']
+    use_venv: false
+    include_system_packages: false
+

@@ -4,6 +4,6 @@ includes:
   - 'interface:rack-pdu'
 options:
   basic:
-    packages:
-      - python
-      - git
+    packages: ['epel-release','python34','git']
+    use_venv: false
+    include_system_packages: false

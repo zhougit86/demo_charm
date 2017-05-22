@@ -6,7 +6,7 @@ options:
   size:
     type: string
     default: "1U"
-    descriptioin: "1U/2U"
+    description: "1U/2U"
   speed:
     type: string
     default: "1G"
@@ -15,10 +15,6 @@ options:
     type: string
     default: "Horizontal"
     description: "Horizontal/Vertical"
-  os:
-    type: string
-    default: "ENOS"
-    description: "ENOS/CNOS"
   port-config-json:
     type: string
     default: ""
